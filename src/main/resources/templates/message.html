@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script th:inline="javascript">
+<!--컨트롤러에서 받아온 변수를 여기에 적용시켜줘야함-->
+// 컨트롤러에서 메세지를 여기에 전송시켜줄거임
+
+    /*<![CDATA[*/
+
+    var message = [[${message}]]; //컨트롤러에서 전달받은 변수(message)를 message 변수에 대입
+    alert(message); //화면에 문구를 띄워주는 함수
+
+    location.replace([[${searchUrl}]]); // 페이지를 이동시켜주는거임
+
+    /*]]>*/
+
+
+</script>
+
+<body>
+
+</body>
+</html>

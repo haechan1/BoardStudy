@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시물 수정폼</title>
+</head>
+<style>
+</style>
+<body>
+<div class="layout">
+    <form th:action="@{/board/update/{id}(id = ${board.id})}" method="post"> <!-- 수정 URL로 요청 -->
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Name</label>
+            <input type="text" name="title" id="exampleFormControlInput1" placeholder="Your Name" th:value="${board.title}"> <!-- 기존 제목 표시 -->
+        </div>
+        <br>
+        <div class="mb34">
+            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label><br>
+            <textarea id="exampleFormControlTextarea1" name="content" rows="5" th:text="${board.content}">Write Something</textarea> <!-- 기존 내용 표시 -->
+        </div>
+        <button type="submit">수정</button> <!-- 수정 버튼 -->
+    </form>
+</div>
+</body>
+</html>
