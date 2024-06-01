@@ -28,7 +28,7 @@ public class BoardService {
     public void write(Board board, MultipartFile file) throws Exception { // Board라는 클래스에 board라는 이름의 변수를 받아주기
         // 파일 업로드 처리 시작
         String projectPath = System.getProperty("user.dir") // 프로젝트 경로를 가져옴
-                + "\\src\\main\\resources\\static\\files"; // 파일이 저장될 폴더의 경로
+                + "\\src\\main\\webapp\\"; // 파일이 저장될 폴더의 경로
 
         UUID uuid = UUID.randomUUID(); // 랜덤으로 식별자를 생성
 
@@ -39,7 +39,7 @@ public class BoardService {
         file.transferTo(saveFile);
 
         board.setFilename(fileName); // 디비에 넣기?
-        board.setFilepath("/files/" + fileName); // static 아래부분의 파일 경로로만으로도 접근이 가능함
+        board.setFilepath("/webapp/" + fileName); // static 아래부분의 파일 경로로만으로도 접근이 가능함
         // 파일 업로드 처리 끝
 
         boardRepository.save(board); // board를 저장소에 save

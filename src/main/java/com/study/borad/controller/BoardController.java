@@ -113,11 +113,11 @@ public class BoardController {
         boardTemp.setTitle(board.getTitle());
         boardTemp.setContent(board.getContent());
 
-        boardService.write(boardTemp, file); // 글 수정 완료
-
         // 모델에 메시지와 리다이렉션 URL 추가
         model.addAttribute("message", "글 수정이 완료되었습니다."); // 사용자에게 표시할 메시지
         model.addAttribute("searchUrl", "/board/list"); // 완료 후 이동할 URL
+
+        boardService.write(boardTemp, file); // 글 수정 완료
 
         // 메시지와 URL을 포함한 message.html 뷰를 반환
         return "message";
